@@ -9,7 +9,7 @@ use GrahamCampbell\ResultType\Result;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class BookController extends Controller
+class AuthorController extends Controller
 {
   use ApiResponser;
 
