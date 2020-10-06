@@ -1,11 +1,11 @@
 <?php
 
-$router->get('/authors', 'BookController@index');
-$router->post('/authors', 'BookController@store');
-$router->get('/authors/{id}', 'BookController@show');
-$router->put('/authors/{id}', 'BookController@update');
-$router->patch('/authors/{id}', 'BookController@update');
-$router->delete('/authors/{id}', 'BookController@destroy');
+$router->get('/authors', 'AuthorController@index');
+$router->post('/authors', 'AuthorController@store');
+$router->get('/authors/{id}', 'AuthorController@show');
+$router->put('/authors/{id}', 'AuthorController@update');
+$router->patch('/authors/{id}', 'AuthorController@update');
+$router->delete('/authors/{id}', 'AuthorController@destroy');
 
 $router->get('/books', 'BookController@index');
 $router->post('/books', 'BookController@store');
