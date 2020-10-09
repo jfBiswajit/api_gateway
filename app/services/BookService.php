@@ -12,31 +12,31 @@ class BookService
 
   public function  __construct()
   {
-    $this->baseUri = config('services.authors.base_uri');
+    $this->baseUri = config('services.books.base_uri');
   }
 
   public function obtainBooks()
   {
-    return $this->performRequest('GET', '/authors');
+    return $this->performRequest('GET', '/books');
   }
 
   public function createBook($data)
   {
-    return $this->performRequest('POST', '/authors', $data);
+    return $this->performRequest('POST', '/books', $data);
   }
 
   public function obtainBook($id)
   {
-    return $this->performRequest('GET', "/authors/{$id}");
+    return $this->performRequest('GET', "/books/{$id}");
   }
 
   public function editBook($data, $id)
   {
-    return $this->performRequest('PUT', "/authors/{$id}", $data);
+    return $this->performRequest('PUT', "/books/{$id}", $data);
   }
 
   public function destroyBook($id)
   {
-    return $this->performRequest('DELETE', "/authors/{$id}");
+    return $this->performRequest('DELETE', "/books/{$id}");
   }
 }

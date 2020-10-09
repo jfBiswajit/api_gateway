@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Author;
 use App\Models\Book;
+use App\Services\AuthorService;
 use App\Services\BookService;
 use App\Traits\ApiResponser;
 use GrahamCampbell\ResultType\Result;
@@ -16,9 +17,12 @@ class BookController extends Controller
 
   public $bookService;
 
-  public function  __construct(BookService $bookService)
+  public $authorService;
+
+  public function  __construct(BookService $bookService, AuthorService $authorService)
   {
     $this->bookService = $bookService;
+    $this->authorService = $authorService;
   }
 
   public function index()
@@ -28,6 +32,7 @@ class BookController extends Controller
 
   public function store(Request $req)
   {
+    $this->authorService->obtainAuthor($req->author_id);
     return $this->successResponse($this->bookService->createBook($req->all(), Response::HTTP_CREATED));
   }
 
