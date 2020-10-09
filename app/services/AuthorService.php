@@ -25,7 +25,13 @@ class AuthorService
     return $this->performRequest('POST', '/authors', $data);
   }
 
-  public function obtainAuthor($id) {
+  public function obtainAuthor($id)
+  {
     return $this->performRequest('GET', "/authors/{$id}");
+  }
+
+  public function editAuthor($data, $id)
+  {
+    return $this->performRequest('PUT', "/authors/{$id}", $data);
   }
 }

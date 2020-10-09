@@ -36,8 +36,9 @@ class AuthorController extends Controller
     return $this->successResponse($this->authorService->obtainAuthor($id));
   }
 
-  public function update(request $req, $id)
+  public function update(Request $req, $id)
   {
+    return $this->successResponse($this->authorService->editAuthor($req->all(), $id));
   }
 
   public function destroy($id)
