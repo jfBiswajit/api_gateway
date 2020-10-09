@@ -15,7 +15,13 @@ class AuthorService
     $this->baseUri = config('services.authors.base_uri');
   }
 
-  public function obtainAuthors() {
+  public function obtainAuthors()
+  {
     return $this->performRequest('GET', '/authors');
+  }
+
+  public function createAuthor($data)
+  {
+    return $this->performRequest('POST', '/authors', $data);
   }
 }
