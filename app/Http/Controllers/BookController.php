@@ -23,21 +23,26 @@ class BookController extends Controller
 
   public function index()
   {
+    return $this->successResponse($this->bookService->obtainBooks());
   }
 
   public function store(Request $req)
   {
+    return $this->successResponse($this->bookService->createBook($req->all(), Response::HTTP_CREATED));
   }
 
   public function show($id)
   {
+    return $this->successResponse($this->bookService->obtainBook($id));
   }
 
-  public function update(request $req, $id)
+  public function update(Request $req, $id)
   {
+    return $this->successResponse($this->bookService->editBook($req->all(), $id));
   }
 
   public function destroy($id)
   {
+    return $this->successResponse($this->bookService->destroyBook($id));
   }
 }
