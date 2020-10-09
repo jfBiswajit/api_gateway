@@ -43,5 +43,6 @@ class AuthorController extends Controller
 
   public function destroy($id)
   {
+    return $this->successResponse($this->authorService->destroyAuthor($id));
   }
 }
